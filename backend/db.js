@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 
 try {
-  await mongoose.connect(
-    "mongodb+srv://ankitmauryacoder:nqZrFW1HTnBMEFTo@cluster0.akv6x97.mongodb.net/Paytm"
-  );
+  await mongoose.connect(process.env.MONGODB_URI);
   console.log("✅ MongoDB connected");
 } catch (error) {
   console.error("❌ MongoDB connection error:", error);
